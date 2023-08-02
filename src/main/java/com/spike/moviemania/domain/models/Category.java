@@ -7,11 +7,6 @@ public class Category {
     private UUID categoryId;
     private String name;
 
-    public Category(UUID categoryId, String name) {
-        this.categoryId = categoryId;
-        this.name = name;
-    }
-
     public Category(String name) {
         this.name = name;
     }
@@ -31,9 +26,4 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
-
-    public void generateId() {
-        this.categoryId = UUID.randomUUID();
-    }
-
 }

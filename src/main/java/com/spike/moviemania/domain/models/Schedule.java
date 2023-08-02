@@ -1,4 +1,4 @@
-package com.spike.moviemania.domain;
+package com.spike.moviemania.domain.models;
 
 import java.sql.Time;
 import java.util.UUID;

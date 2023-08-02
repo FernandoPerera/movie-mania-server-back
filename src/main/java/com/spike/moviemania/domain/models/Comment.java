@@ -5,22 +5,14 @@ import java.util.UUID;
 public class Comment {
 
     private UUID commentId;
-    private String nickname;
     private String comment;
-    private UUID movieId;
+    private User user;
+    private Movie movie;
 
-    public Comment(UUID commentId, String nickname, String comment,
-                   UUID movieId) {
-        this.commentId = commentId;
-        this.nickname = nickname;
+    public Comment(String comment, User user, Movie movie) {
         this.comment = comment;
-        this.movieId = movieId;
-    }
-
-    public Comment(String nickname, String comment, UUID movieId) {
-        this.nickname = nickname;
-        this.comment = comment;
-        this.movieId = movieId;
+        this.user = user;
+        this.movie = movie;
     }
 
     public UUID getCommentId() {
@@ -31,14 +23,6 @@ public class Comment {
         this.commentId = commentId;
     }
 
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
     public String getComment() {
         return comment;
     }
@@ -47,15 +31,19 @@ public class Comment {
         this.comment = comment;
     }
 
-    public UUID getMovieId() {
-        return movieId;
+    public User getUser() {
+        return user;
     }
 
-    public void setMovieId(UUID movieId) {
-        this.movieId = movieId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public void generateId() {
-        this.commentId = UUID.randomUUID();
+    public Movie getMovie() {
+        return movie;
+    }
+
+    public void setMovie(Movie movie) {
+        this.movie = movie;
     }
 }

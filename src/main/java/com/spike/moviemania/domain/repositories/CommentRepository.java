@@ -8,11 +8,9 @@ import java.util.UUID;
 public interface CommentRepository {
 
     void save(Comment comment);
-
     void update(Comment comment);
-
     void delete(UUID commentId);
-
     List<Comment> getAllCommentsByMovieId(UUID movieId);
+    List<Comment> getAllCommentsByUserId(UUID userId);
 
 }

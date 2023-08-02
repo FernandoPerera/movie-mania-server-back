@@ -1,7 +1,6 @@
 package com.spike.moviemania.domain.models;
 
-import java.io.File;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.UUID;
 
 public class Movie {
@@ -9,30 +8,16 @@ public class Movie {
     private UUID movieId;
     private String name;
     private String production;
-    private Date releaseDate;
     private String description;
-    private UUID categoryId;
-    private File image;
+    private Calendar releaseDate;
+    private Category category;
 
-    public Movie(UUID movieId, String name, String production,
-                 Date releaseDate, String description, UUID categoryId, File image) {
-        this.movieId = movieId;
+    public Movie(String name, String production, String description, Calendar releaseDate, Category category) {
         this.name = name;
         this.production = production;
-        this.releaseDate = releaseDate;
         this.description = description;
-        this.categoryId = categoryId;
-        this.image = image;
-    }
-
-    public Movie(String name, String production, Date releaseDate,
-                 String description, UUID categoryId, File image) {
-        this.name = name;
-        this.production = production;
         this.releaseDate = releaseDate;
-        this.description = description;
-        this.categoryId = categoryId;
-        this.image = image;
+        this.category = category;
     }
 
     public UUID getMovieId() {
@@ -59,14 +44,6 @@ public class Movie {
         this.production = production;
     }
 
-    public Date getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(Date releaseDate) {
-        this.releaseDate = releaseDate;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -75,24 +52,19 @@ public class Movie {
         this.description = description;
     }
 
-    public UUID getCategoryId() {
-        return categoryId;
+    public Calendar getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setCategoryId(UUID categoryId) {
-        this.categoryId = categoryId;
+    public void setReleaseDate(Calendar releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
-    public File getImage() {
-        return image;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setImage(File image) {
-        this.image = image;
+    public void setCategory(Category category) {
+        this.category = category;
     }
-
-    public void generateId() {
-        this.movieId = UUID.randomUUID();
-    }
-
 }
